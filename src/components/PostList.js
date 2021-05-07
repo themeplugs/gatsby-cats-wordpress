@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 export default class IndexPage extends React.Component {
   render() {
     const { posts, title } = this.props
-
+    const resolutions = post.featured_media.localFile.childImage.Sharp.resolutions
     return (
       <section className="section x">
         <div className="container">
@@ -14,6 +14,11 @@ export default class IndexPage extends React.Component {
                 <div className="columns">
                     {posts.map(({ node: post }) => (
                       <div className="post-content column is-6" key={post.id} >
+                       {resolutions &&
+                          <div>
+                            <img src="{resolutions.src}" alt="" />
+                          </div>
+                       }
                         <p>
                           <Link className="has-text-primary" to={post.slug}>
                             {post.title}
@@ -69,5 +74,16 @@ export const pageQuery = graphql`
     }
     date(formatString: "MMMM DD, YYYY")
     slug
+    featured_media{
+      localfile{
+        childImageSharp{
+          resolutions(width:500, height: 500){
+            src
+            width
+            height
+          }
+        }
+      }
+    }
   }
 `
