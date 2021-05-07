@@ -74,16 +74,5 @@ export const pageQuery = graphql`
     }
     date(formatString: "MMMM DD, YYYY")
     slug
-    featured_media{
-      localfile{
-        childImageSharp{
-          resolutions(width:500, height: 500){
-            src
-            width
-            height
-          }
-        }
-      }
-    }
   }
 `
