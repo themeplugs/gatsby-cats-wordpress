@@ -17,17 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
             id
             slug
             status
-            featured_media{
-              localfile{
-                childImageSharp{
-                  resolutions(width:500, height: 500){
-                    src
-                    width
-                    height
-                  }
-                }
-              }
-            }
           }
         }
       }
