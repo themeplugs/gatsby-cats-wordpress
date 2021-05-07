@@ -18,14 +18,18 @@ const Navbar = () => (
     `}
     render={data => (
       <nav className="navbar is-transparent">
+        
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              <figure className="image">
-                <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-              </figure>
-            </Link>
-          </div>
+              <Link to="/" className="navbar-item">
+                <figure className="image">
+                  <img src={logo} alt="Kaldi" style={{ height: '140px' }} />
+                </figure>
+              </Link>
+            </div>
+        </div>
+        <div className="container">
+        
           <div className="navbar-start">
             {data.allWordpressPage.edges.map(edge => (
               <Link
