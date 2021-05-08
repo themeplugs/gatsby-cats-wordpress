@@ -2,13 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
-import { getSrc } from "gatsby-plugin-image"
-const src = getSrc(data.hero)
-
-
 export default class IndexPage extends React.Component {
   render() {
-    const { posts, categories, title } = this.props
+    const { posts, title } = this.props
 
     return (
       <section className="section">
@@ -18,13 +14,9 @@ export default class IndexPage extends React.Component {
                 <div className="row">
                     {posts.map(({ node: post }) => (
                       <div className="col-lg-6" key={post.id} >
-                         
-                         <div className="thumbnail">
-                          <img content={src} />
-                         </div>
-
                         {categories && categories.length ? (
                         <div>
+                          <h4>Categories</h4>
                           <ul className="taglist">
                             {categories.map(category => (
                               <li key={`${category.slug}cat`}>
