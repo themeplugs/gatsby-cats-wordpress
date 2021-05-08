@@ -11,31 +11,29 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <div className="row no-gutters">
               <div className="col-lg-8">
-                <div className="row">
+                <div className="row no-gutters">
                     {posts.map(({ node: post }) => (
                       <div className="col-lg-6" key={post.id} >
-                        
-                        <p>
-                          <Link className="has-text-primary" to={post.slug}>
-                            {post.title}
-                          </Link>
-                          <span> &bull; </span>
-                          <small>
-                            {post.date} - posted by{' '}
-                            <Link to={`/author/${post.author.slug}`}>
-                              {post.author.name}
-                            </Link>
-                          </small>
-                        </p>
-                        <div>
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: post.excerpt.replace(/<p class="link-more.*/, ''),
-                            }}
-                          />
-                          <Link className="button is-small" to={post.slug}>
-                            Keep Reading →
-                          </Link>
+                        <div className="post-block">
+                            <h2 className="post-title">
+                                <Link  to={post.slug}>
+                                {post.title}
+                                </Link>
+                            </h2>
+                            <div className="post-content">
+                                <div dangerouslySetInnerHTML={{
+                                    __html: post.excerpt.replace(/<p class="more-link-hide link-more.*/, ''),
+                                    }}
+                                />
+                            </div>
+                            <div className="post-meta">
+                               <span>
+                                    <Link to={`/author/${post.author.slug}`}>
+                                        {post.author.name}
+                                    </Link>
+                                </span>, 
+                                <span> {post.date} {' '}</span>
+                            </div>
                         </div>
                       </div>
                     ))}

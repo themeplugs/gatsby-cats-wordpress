@@ -21,8 +21,8 @@ module.exports = {
         verboseOutput: false,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    // 'gatsby-plugin-sharp',
+    // 'gatsby-transformer-sharp',
     {
       // Removes unused css rules
       resolve:'gatsby-plugin-purgecss',
