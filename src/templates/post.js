@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 
-
 export const BlogPostTemplate = ({
   content,
   categories,
@@ -55,9 +54,7 @@ export const BlogPostTemplate = ({
               ) : null}
             </div>
           </div>
-          <div className="col-lg-4">
-            
-          </div>
+          <div className="col-lg-4"></div>
         </div>
       </div>
     </section>

@@ -14,20 +14,7 @@ export default class IndexPage extends React.Component {
                 <div className="row">
                     {posts.map(({ node: post }) => (
                       <div className="col-lg-6" key={post.id} >
-                        {categories && categories.length ? (
-                        <div>
-                          <h4>Categories</h4>
-                          <ul className="taglist">
-                            {categories.map(category => (
-                              <li key={`${category.slug}cat`}>
-                                <Link to={`/categories/${category.slug}/`}>
-                                  {category.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
+                        
                         <p>
                           <Link className="has-text-primary" to={post.slug}>
                             {post.title}
