@@ -3,14 +3,14 @@ import Helmet from 'react-helmet'
 
 import Navbar from './Navbar'
 
-import Nav from './Nav'
+import NavMenu from './NavMenu'
 
 import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + WordPress" />
-    <Nav menu={data} />
+    <NavMenu menu={data} />
     <div>{children}</div>
   </div>
 )
