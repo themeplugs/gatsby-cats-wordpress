@@ -4,16 +4,29 @@ import { Link, graphql } from 'gatsby'
 
 export default class IndexPage extends React.Component {
   render() {
-    const { posts, title } = this.props
+    const { posts, categories, title } = this.props
 
     return (
-      <section className="section x">
+      <section className="section">
         <div className="container">
-          <div className="row">
+          <div className="row no-gutters">
               <div className="col-lg-8">
                 <div className="row">
                     {posts.map(({ node: post }) => (
                       <div className="col-lg-6" key={post.id} >
+                        {categories && categories.length ? (
+                        <div>
+                          <ul className="taglist">
+                            {categories.map(category => (
+                              <li key={`${category.slug}cat`}>
+                                <Link to={`/categories/${category.slug}/`}>
+                                  {category.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null}
                         <p>
                           <Link className="has-text-primary" to={post.slug}>
                             {post.title}
