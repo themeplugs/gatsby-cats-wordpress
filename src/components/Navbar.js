@@ -5,12 +5,21 @@ import logo from '../img/Cute-Animal-Planet-Logo.jpg'
 const Navbar = () => (
   <StaticQuery
     query={graphql`
-      query {
-        allWordpressPage(sort: { fields: wordpress_id }, limit: 5) {
+      query MyQuery {
+        menus {
           edges {
+            cursor
             node {
-              title
+              id
+              name
               slug
+              menuId
+              locations
+              menuItems {
+                edges {
+                  node
+                }
+              }
             }
           }
         }
