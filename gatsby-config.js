@@ -21,8 +21,9 @@ module.exports = {
         verboseOutput: false,
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       // Removes unused css rules
       resolve:'gatsby-plugin-purgecss',

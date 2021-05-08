@@ -4,6 +4,13 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 
+import { getSrc } from "gatsby-plugin-image"
+
+const src = getSrc(data.hero)
+
+
+
+
 export const BlogPostTemplate = ({
   content,
   categories,
@@ -20,6 +27,9 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <div className="thumbnail">
+              <img content={src} />
+            </div>
             <div dangerouslySetInnerHTML={{ __html: content }} />
             <div style={{ marginTop: `4rem` }}>
               <p>

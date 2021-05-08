@@ -2,6 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
+import { getSrc } from "gatsby-plugin-image"
+const src = getSrc(data.hero)
+
+
 export default class IndexPage extends React.Component {
   render() {
     const { posts, categories, title } = this.props
@@ -14,6 +18,11 @@ export default class IndexPage extends React.Component {
                 <div className="row">
                     {posts.map(({ node: post }) => (
                       <div className="col-lg-6" key={post.id} >
+                         
+                         <div className="thumbnail">
+                          <img content={src} />
+                         </div>
+
                         {categories && categories.length ? (
                         <div>
                           <ul className="taglist">
